@@ -1,206 +1,93 @@
-/*  تنسيقات عامة  */
+:root {
+    --bg-light: #f9f9f9;
+    --bg-dark: #1e1e1e;
+    --text-light: #333;
+    --text-dark: #f9f9f9;
+    --accent-color: #00bcd4;
+}
+
 body {
-    font-family: 'Cairo', sans-serif; /* استخدام خط Cairo */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* لون خلفية رمادي فاتح */
-    color: #333; /* لون نص أساسي داكن */
-    direction: rtl; /* اتجاه الكتابة من اليمين لليسار */
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: background-color 0.5s, color 0.5s;
 }
 
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px 0;
-}
-
-/*  تنسيقات الشريط العلوي (Header)  */
-header {
-    background-color: #333; /* لون خلفية الشريط العلوي */
-    color: #fff; /* لون نص الشريط العلوي */
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-header h1 {
-    float: right; /* عنوان الموقع على اليمين */
-    margin: 0;
-}
-
-header nav {
-    float: left; /* قائمة التنقل على اليسار */
-    margin-top: 10px;
-}
-
-header nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-header nav li {
-    display: inline;
-    padding: 0 20px 0 20px;
-}
-
-header nav li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-header nav li a:hover {
-    color: #ddd; /* لون الرابط عند التحويم */
-}
-
-/*  تنسيقات قسم البطل (Hero Section)  */
-.hero {
-    background-color: #e0f7fa; /* لون خلفية قسم البطل */
-    padding: 60px 0;
-}
-
-.hero .container {
-    display: flex; /* استخدام Flexbox لتوزيع المحتوى والصورة جنبًا إلى جنب */
-    justify-content: space-between; /* توزيع المسافة بين المحتوى والصورة */
-    align-items: center; /* محاذاة عمودية */
-}
-
-.hero-content {
-    flex-basis: 50%; /* يأخذ نصف المساحة */
-    padding-right: 20px;
-}
-
-.hero-content h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #26a69a; /* لون عنوان قسم البطل */
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-}
-
-.download-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #26a69a; /* لون زر التنزيل */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: background-color 0.3s ease; /* تأثير انتقال عند التحويم */
-}
-
-.download-button:hover {
-    background-color: #2bbbad; /* لون أغمق عند التحويم */
-}
-
-
-.hero-image {
-    flex-basis: 40%; /* يأخذ 40% من المساحة */
-    text-align: center; /* توسيط الصورة */
-}
-
-.hero-image img {
-    max-width: 100%; /* الصورة لا تتجاوز عرض الحاوية */
-    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-    border-radius: 10px; /* زوايا مدورة للصورة */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* ظل خفيف للصورة */
-}
-
-
-/*  تنسيقات قسم المحتوى الرئيسي (Main Content)  */
-.main-content {
-    padding: 60px 0;
-    text-align: center; /* توسيط النص في هذا القسم */
-}
-
-.main-content h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.features {
-    display: flex; /* استخدام Flexbox لتوزيع المميزات جنبًا إلى جنب */
-    justify-content: space-around; /* توزيع المسافة بين المميزات */
-    flex-wrap: wrap; /* السماح بلف المميزات في الشاشات الصغيرة */
-}
-
-.feature {
-    flex-basis: 30%; /* كل ميزة تأخذ 30% من المساحة */
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff; /* خلفية بيضاء للميزات */
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* ظل أخف للميزات */
-}
-
-.feature img {
-    max-width: 80px;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.feature h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.feature p {
-    line-height: 1.6;
-    color: #555;
-}
-
-/*  تنسيقات التذييل (Footer)  */
-footer {
-    background-color: #333;
-    color: #fff;
+.header, .platforms, .contact, .footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
+    animation: fadeInUp 0.8s ease;
 }
 
-/*  تصميم متجاوب (Responsive Design)  */
-@media (max-width: 768px) { /* للشاشات الصغيرة مثل الأجهزة اللوحية والهواتف */
-    .container {
-        width: 95%; /* حاوية أعرض في الشاشات الصغيرة */
-    }
+.header {
+    background-color: var(--accent-color);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    header h1, header nav {
-        float: none; /* العناصر في الشريط العلوي تحت بعضها */
-        text-align: center;
-    }
+.icons img {
+    width: 60px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 
-    header nav ul {
-        margin-top: 10px;
-    }
+.icons img:hover {
+    transform: scale(1.2);
+}
 
-    .hero .container {
-        flex-direction: column; /* قسم البطل عمودي في الشاشات الصغيرة */
-        text-align: center;
-    }
+.contact a {
+    display: inline-block;
+    margin: 5px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 
+.contact a:hover {
+    color: #007b8a;
+}
 
-    .hero-content {
-        flex-basis: 100%; /* المحتوى يأخذ المساحة الكاملة */
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
+.footer {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 10px;
+}
 
-    .hero-image {
-        flex-basis: 80%; /* الصورة تأخذ 80% من المساحة */
-    }
+.toggle-container {
+    margin: 10px;
+    font-size: 14px;
+}
 
-    .features {
-        flex-direction: column; /* المميزات تحت بعضها في الشاشات الصغيرة */
-    }
+/* الوضع الليلي */
+.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+}
 
-    .feature {
-        flex-basis: 80%; /* المميزات تأخذ 80% من المساحة في الشاشات الصغيرة */
-        margin-left: auto;
-        margin-right: auto;
+.dark-mode .header, .dark-mode .footer {
+    background-color: #007b8a;
+}
+
+.dark-mode a {
+    color: #00e6ff;
+}
+
+.dark-mode a:hover {
+    color: #b3ffff;
+}
+
+/* أنيميشن */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
