@@ -86,7 +86,7 @@ section.content {
     background: rgba(255, 255, 255, 0.1);
     padding: 30px;
     border-radius: 10px;
-    width: 22%;
+    width: 45%;
     transition: transform 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -136,6 +136,27 @@ button {
 
 button:hover {
     background-color: #5e6fd8;
+}
+
+.example {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.disclaimer {
+    font-size: 0.8em;
+    color: #aaa;
+    margin-top: 20px;
+}
+
+.disclaimer a {
+    color: #6e7dff;
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline;
 }
 
 /* الفوتر */
