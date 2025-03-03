@@ -1,102 +1,61 @@
-// دالة لتنزيل المحتوى
-function downloadContent() {
-    const url = document.getElementById('downloadUrl').value;
-    if (!url) {
-        alert('الرجاء إدخال رابط صحيح.');
-        return;
-    }
-
-    // يمكنك إضافة منطق التحميل الفعلي هنا
-    alert('جارٍ تحميل المحتوى: ' + url);
-}
-
 // تفعيل الوضع المظلم
 document.getElementById('darkModeToggle').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
     
-    // تغيير النص داخل الزر بناءً على حالة الوضع المظلم
     if (document.body.classList.contains('dark-mode')) {
-        this.innerHTML = '<i class="fas fa-sun"></i> تمكين الوضع الفاتح';
-        localStorage.setItem('darkMode', 'enabled'); // حفظ حالة الوضع المظلم
+        localStorage.setItem('darkMode', 'enabled');
     } else {
-        this.innerHTML = '<i class="fas fa-moon"></i> تمكين الوضع المظلم';
-        localStorage.setItem('darkMode', 'disabled'); // حفظ حالة الوضع المظلم
+        localStorage.setItem('darkMode', 'disabled');
     }
 });
 
-// التحقق من حالة الوضع المظلم عند تحميل الصفحة
+// التحقق من الوضع المظلم عند التحميل
 if (localStorage.getItem('darkMode') === 'enabled') {
     document.body.classList.add('dark-mode');
-    document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-sun"></i> تمكين الوضع الفاتح';
-} else {
-    document.body.classList.remove('dark-mode');
-    document.getElementById('darkModeToggle').innerHTML = '<i class="fas fa-moon"></i> تمكين الوضع المظلم';
 }
 
-// Drag and Drop
-const dropArea = document.getElementById('drop-area');
-const fileInput = document.getElementById('file-input');
-const browseText = document.getElementById('browse');
-const progressBar = document.getElementById('progress-bar');
-const progress = document.getElementById('progress');
-const uploadBtn = document.getElementById('upload-btn');
-
-dropArea.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    dropArea.style.border = '2px dashed var(--secondary-color)';
+// معالجة أحداث التنزيل
+document.querySelectorAll('.download-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const platform = this.dataset.platform;
+        showDownloadModal(platform);
+    });
 });
 
-dropArea.addEventListener('drop', (e) => {
-    e.preventDefault();
-    dropArea.style.border = '2px dashed var(--primary-color)';
-    const file = e.dataTransfer.files[0];
-    handleFile(file);
-});
+// عرض نافذة التنزيل
+function showDownloadModal(platform) {
+    const modal = document.createElement('div');
+    modal.className = 'download-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <h3>أدخل رابط ${getPlatformName(platform)}</h3>
+            <input type="text" id="downloadUrl" placeholder="https://">
+            <button onclick="startDownload('${platform}')">تنزيل الآن</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+}
 
-browseText.addEventListener('click', () => {
-    fileInput.click();
-});
-
-fileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    handleFile(file);
-});
-
-function handleFile(file) {
-    if (file) {
-        showNotification(`تم اختيار الملف: ${file.name}`);
+// بدء عملية التنزيل
+function startDownload(platform) {
+    const url = document.getElementById('downloadUrl').value;
+    if (!url) {
+        alert('الرجاء إدخال رابط صحيح!');
+        return;
     }
+    
+    // محاكاة عملية التنزيل
+    alert(`جارٍ تنزيل المحتوى من ${getPlatformName(platform)}...`);
+    document.querySelector('.download-modal').remove();
 }
 
-// إشعارات
-function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.style.position = 'fixed';
-    notification.style.bottom = '20px';
-    notification.style.right = '20px';
-    notification.style.backgroundColor = 'var(--primary-color)';
-    notification.style.color = 'white';
-    notification.style.padding = '10px 20px';
-    notification.style.borderRadius = '5px';
-    notification.innerText = message;
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
+// تحويل اسم المنصة
+function getPlatformName(platform) {
+    const names = {
+        instagram: 'إنستجرام',
+        youtube: 'يوتيوب',
+        tiktok: 'تيك توك',
+        twitter: 'تويتر'
+    };
+    return names[platform];
 }
-
-// نموذج التواصل
-const contactForm = document.getElementById('contact-form');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-
-    // هنا يمكنك إرسال البيانات إلى الخادم
-    console.log({ name, email, message });
-    showNotification('تم إرسال رسالتك بنجاح!');
-    contactForm.reset();
-});
