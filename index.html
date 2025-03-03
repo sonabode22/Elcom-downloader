@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ELCOM Downloader</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,31 +27,31 @@
         <div class="platforms">
             <!-- منصات التحميل -->
             <div class="platform instagram">
-                <i class="fab fa-instagram fa-4x"></i> 
+                <i class="fab fa-instagram fa-4x"></i>
                 <h3>إنستجرام</h3>
-                <input type="text" placeholder="أدخل رابط الصورة أو الفيديو">
-                <button>تحميل</button>
+                <input type="text" id="instagramUrl" placeholder="أدخل رابط الصورة أو الفيديو">
+                <button onclick="downloadInstagram()">تحميل</button>
             </div>
 
             <div class="platform youtube">
-                <i class="fab fa-youtube fa-4x"></i> 
+                <i class="fab fa-youtube fa-4x"></i>
                 <h3>يوتيوب</h3>
-                <input type="text" placeholder="أدخل رابط الفيديو">
-                <button>تحميل</button>
+                <input type="text" id="youtubeUrl" placeholder="أدخل رابط الفيديو">
+                <button onclick="downloadYouTube()">تحميل</button>
             </div>
 
             <div class="platform facebook">
-                <i class="fab fa-facebook fa-4x"></i> 
+                <i class="fab fa-facebook fa-4x"></i>
                 <h3>فيسبوك</h3>
-                <input type="text" placeholder="أدخل رابط الصورة أو الفيديو">
-                <button>تحميل</button>
+                <input type="text" id="facebookUrl" placeholder="أدخل رابط الصورة أو الفيديو">
+                <button onclick="downloadFacebook()">تحميل</button>
             </div>
 
             <div class="platform pinterest">
-                <i class="fab fa-pinterest fa-4x"></i> 
+                <i class="fab fa-pinterest fa-4x"></i>
                 <h3>بينترست</h3>
-                <input type="text" placeholder="أدخل رابط الصورة أو الفيديو">
-                <button>تحميل</button>
+                <input type="text" id="pinterestUrl" placeholder="أدخل رابط الصورة أو الفيديو">
+                <button onclick="downloadPinterest()">تحميل</button>
             </div>
         </div>
     </section>
