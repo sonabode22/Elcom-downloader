@@ -29,8 +29,26 @@
     </div>
 </section>
 
+<section class="download-section">
+    <h2>تحميل المحتوى</h2>
+    <div id="drop-area">
+        <p>اسحب وأسقط الملف هنا أو <span id="browse">اختر ملف</span></p>
+        <input type="file" id="file-input" hidden>
+    </div>
+    <div id="progress-bar">
+        <div id="progress"></div>
+    </div>
+    <button id="upload-btn">رفع الملف</button>
+</section>
+
 <section class="contact">
     <h2>تواصل معنا</h2>
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="اسمك" required>
+        <input type="email" id="email" placeholder="بريدك الإلكتروني" required>
+        <textarea id="message" placeholder="رسالتك" required></textarea>
+        <button type="submit">إرسال</button>
+    </form>
     <p>تابعنا على:</p>
     <a href="https://www.instagram.com/elcomengineering" target="_blank">@elcomengineering</a><br>
     <a href="https://www.instagram.com/ln6ie" target="_blank">@ln6ie</a>
