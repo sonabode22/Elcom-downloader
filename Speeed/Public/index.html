@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elcom Speedtest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><span class="logo">Elcom</span> Speedtest</h1>
+        </div>
+
+        <div class="speedometer">
+            <div class="dial">
+                <div class="numbers">
+                    <span style="--pos:0">0</span>
+                    <span style="--pos:1">100</span>
+                    <span style="--pos:2">200</span>
+                    <span style="--pos:3">300</span>
+                    <span style="--pos:4">400</span>
+                    <span style="--pos:5">500</span>
+                </div>
+                <div class="needle" id="needle"></div>
+                <div class="speed-display">
+                    <div id="speedValue">0</div>
+                    <div class="unit" id="speedUnit">Mbps</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="startBtn" class="start-btn">بدء الاختبار</button>
+        </div>
+
+        <div class="results">
+            <div class="result-card download">
+                <h2>سرعة التنزيل</h2>
+                <div class="result-values">
+                    <div class="unit-row">
+                        <span id="downloadKb">0</span>
+                        <span>Kbps</span>
+                    </div>
+                    <div class="unit-row">
+                        <span id="downloadMb">0</span>
+                        <span>Mbps</span>
+                    </div>
+                    <div class="unit-row">
+                        <span id="downloadMB">0</span>
+                        <span>MB/s</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card upload">
+                <h2>سرعة الرفع</h2>
+                <div class="result-values">
+                    <div class="unit-row">
+                        <span id="uploadKb">0</span>
+                        <span>Kbps</span>
+                    </div>
+                    <div class="unit-row">
+                        <span id="uploadMb">0</span>
+                        <span>Mbps</span>
+                    </div>
+                    <div class="unit-row">
+                        <span id="uploadMB">0</span>
+                        <span>MB/s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
