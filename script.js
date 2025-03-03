@@ -9,17 +9,6 @@ function downloadInstagram() {
     }
 }
 
-// دالة لتنزيل المحتوى من فيسبوك
-function downloadFacebook() {
-    const url = document.getElementById('facebookUrl').value;
-    if (url) {
-        alert('جارٍ تحميل المحتوى من فيسبوك: ' + url);
-        // يمكنك إضافة منطق التحميل الفعلي هنا
-    } else {
-        alert('الرجاء إدخال رابط صحيح من فيسبوك.');
-    }
-}
-
 // تفعيل الوضع المظلم
 document.getElementById('darkModeToggle').addEventListener('click', function() {
     document.body.classList.toggle('dark-mode');
