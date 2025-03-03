@@ -11,6 +11,7 @@
             --secondary: #009FFD;
             --accent: #FF3C38;
             --bg: #F8F7FF;
+            --text: #2D3047;
         }
 
         body {
@@ -18,36 +19,47 @@
             background: var(--bg);
             margin: 0;
             padding: 20px;
+            color: var(--text);
         }
 
         .dashboard {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         /* نافذة الحسابات */
-        .instagram-window {
+        .social-window {
             background: white;
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .social-window:hover {
+            transform: translateY(-5px);
         }
 
         .account-card {
             display: flex;
             align-items: center;
+            padding: 15px;
             margin: 15px 0;
-            padding: 10px;
-            border-radius: 10px;
-            background: #f5f5f5;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .account-card:hover {
+            background: #e9ecef;
         }
 
         .account-card i {
-            font-size: 24px;
-            margin-left: 10px;
+            font-size: 28px;
+            margin-left: 15px;
             color: #E1306C;
         }
 
@@ -55,123 +67,206 @@
         .speedtest-window {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .speed-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .speed-item {
-            text-align: center;
-            padding: 15px;
-            border-radius: 10px;
-            background: var(--bg);
+        .speed-header {
+            position: relative;
+            z-index: 1;
         }
 
         .speed-graph {
-            height: 150px;
-            background: linear-gradient(90deg, #009FFD, #2A2A72);
-            border-radius: 10px;
+            height: 180px;
+            background: linear-gradient(135deg, #009FFD, #2A2A72);
+            border-radius: 15px;
             margin: 20px 0;
             position: relative;
+        }
+
+        .speed-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg);
+            border-radius: 12px;
+        }
+
+        .stat-item h3 {
+            margin: 10px 0;
+            color: var(--primary);
         }
 
         /* نافذة التنزيل */
         .download-window {
             background: white;
             border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 25px;
+            position: relative;
         }
 
         .platform-selector {
             display: flex;
             gap: 10px;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
         .platform-btn {
             flex: 1;
-            padding: 10px;
+            padding: 15px;
             border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .platform-btn.active {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: white;
         }
 
         .download-input {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #009FFD;
-            border-radius: 8px;
-            margin: 10px 0;
+            padding: 15px;
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: opacity 0.3s;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* الرسوم المتحركة */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .loading {
+            animation: pulse 1.5s infinite;
         }
     </style>
 </head>
 <body>
     <div class="dashboard">
         <!-- نافذة الحسابات -->
-        <div class="instagram-window">
+        <div class="social-window">
             <h2><i class="fab fa-instagram"></i> الحسابات الرسمية</h2>
             <div class="account-card">
                 <i class="fab fa-instagram"></i>
                 <div>
                     <h3>@ln6ie</h3>
-                    <p>حساب الهندسة</p>
+                    <p>قناة الهندسة والتكنولوجيا</p>
                 </div>
             </div>
             <div class="account-card">
                 <i class="fab fa-instagram"></i>
                 <div>
                     <h3>@elcomengineering</h3>
-                    <p>حساب الشركة</p>
+                    <p>الحساب الرسمي للشركة</p>
                 </div>
             </div>
         </div>
 
         <!-- نافذة قياس السرعة -->
         <div class="speedtest-window">
-            <h2><i class="fas fa-tachometer-alt"></i> قياس السرعة</h2>
-            <div class="speed-grid">
-                <div class="speed-item">
-                    <h3>4 ms</h3>
-                    <p>زمن الاستجابة</p>
-                </div>
-                <div class="speed-item">
+            <h2 class="speed-header"><i class="fas fa-tachometer-alt"></i> قياس السرعة</h2>
+            <div class="speed-stats">
+                <div class="stat-item">
+                    <i class="fas fa-download"></i>
                     <h3>121 Mbps</h3>
                     <p>سرعة التنزيل</p>
                 </div>
+                <div class="stat-item">
+                    <i class="fas fa-upload"></i>
+                    <h3>45 Mbps</h3>
+                    <p>سرعة الرفع</p>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>4 ms</h3>
+                    <p>زمن الاستجابة</p>
+                </div>
             </div>
             <div class="speed-graph"></div>
-            <button class="speed-btn">بدء الفحص الجديد</button>
+            <button class="download-btn" onclick="startSpeedTest()">بدء فحص جديد</button>
         </div>
 
         <!-- نافذة التنزيل -->
         <div class="download-window">
             <h2><i class="fas fa-download"></i> تنزيل المحتوى</h2>
             <div class="platform-selector">
-                <button class="platform-btn instagram"><i class="fab fa-instagram"></i></button>
-                <button class="platform-btn youtube"><i class="fab fa-youtube"></i></button>
-                <button class="platform-btn tiktok"><i class="fab fa-tiktok"></i></button>
+                <button class="platform-btn" onclick="selectPlatform('instagram')">
+                    <i class="fab fa-instagram"></i>
+                </button>
+                <button class="platform-btn" onclick="selectPlatform('youtube')">
+                    <i class="fab fa-youtube"></i>
+                </button>
+                <button class="platform-btn" onclick="selectPlatform('tiktok')">
+                    <i class="fab fa-tiktok"></i>
+                </button>
             </div>
-            <input type="text" class="download-input" placeholder="الصق الرابط هنا">
-            <button class="download-btn">تنزيل الآن</button>
+            <input type="text" class="download-input" placeholder="الصق رابط المحتوى هنا">
+            <button class="download-btn" onclick="startDownload()">بدء التنزيل</button>
         </div>
     </div>
 
     <script>
+        // اختيار المنصة
+        function selectPlatform(platform) {
+            document.querySelectorAll('.platform-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
         // محاكاة فحص السرعة
-        document.querySelector('.speed-btn').addEventListener('click', function() {
-            this.innerHTML = '<i class="fas fa-sync fa-spin"></i> جاري الفحص...';
+        function startSpeedTest() {
+            const btn = event.target;
+            btn.innerHTML = '<i class="fas fa-sync fa-spin"></i> جاري الفحص...';
+            btn.classList.add('loading');
+            
             setTimeout(() => {
-                this.innerHTML = 'تم الفحص بنجاح!';
-                // تحديث النتائج هنا
+                btn.innerHTML = 'تم الفحص بنجاح!';
+                btn.classList.remove('loading');
+                // يمكنك تحديث القيم هنا
             }, 2000);
-        });
+        }
+
+        // محاكاة عملية التنزيل
+        function startDownload() {
+            const btn = event.target;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري التنزيل...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> تم التنزيل!';
+                setTimeout(() => {
+                    btn.innerHTML = 'بدء التنزيل';
+                }, 1500);
+            }, 3000);
+        }
     </script>
 </body>
 </html>
