@@ -28,25 +28,33 @@ function showDownloadModal(platform) {
     modal.className = 'download-modal';
     modal.innerHTML = `
         <div class="modal-content">
-            <h3>أدخل رابط ${getPlatformName(platform)}</h3>
-            <input type="text" id="downloadUrl" placeholder="https://">
-            <button onclick="startDownload('${platform}')">تنزيل الآن</button>
+            <span class="close-modal">&times;</span>
+            <h3>${getPlatformName(platform)} - أدخل رابط المحتوى</h3>
+            <div class="input-group">
+                <input type="text" id="downloadUrl" placeholder="مثال: https://www.instagram.com/p/...">
+                <button onclick="startDownload('${platform}')">
+                    <span>بدء التنزيل</span>
+                    <div class="loading-dots"></div>
+                </button>
+            </div>
         </div>
     `;
+    
+    modal.querySelector('.close-modal').addEventListener('click', () => modal.remove());
     document.body.appendChild(modal);
 }
 
 // بدء عملية التنزيل
 function startDownload(platform) {
-    const url = document.getElementById('downloadUrl').value;
-    if (!url) {
-        alert('الرجاء إدخال رابط صحيح!');
-        return;
-    }
-    
+    const btn = document.querySelector('.download-modal button');
+    btn.disabled = true;
+    btn.innerHTML = `<div class="loading-dots"></div>`;
+
     // محاكاة عملية التنزيل
-    alert(`جارٍ تنزيل المحتوى من ${getPlatformName(platform)}...`);
-    document.querySelector('.download-modal').remove();
+    setTimeout(() => {
+        alert('تم التنزيل بنجاح!');
+        document.querySelector('.download-modal').remove();
+    }, 2000);
 }
 
 // تحويل اسم المنصة
