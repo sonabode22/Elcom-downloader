@@ -63,3 +63,180 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elcom Pro Suite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2A2A72;
+            --secondary: #009FFD;
+            --accent: #FF3C38;
+            --bg: #F8F7FF;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--bg);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* نافذة الحسابات */
+        .instagram-window {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .account-card {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 10px;
+            background: #f5f5f5;
+        }
+
+        .account-card i {
+            font-size: 24px;
+            margin-left: 10px;
+            color: #E1306C;
+        }
+
+        /* نافذة قياس السرعة */
+        .speedtest-window {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .speed-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .speed-item {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: var(--bg);
+        }
+
+        .speed-graph {
+            height: 150px;
+            background: linear-gradient(90deg, #009FFD, #2A2A72);
+            border-radius: 10px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        /* نافذة التنزيل */
+        .download-window {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .platform-selector {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .platform-btn {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .download-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #009FFD;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- نافذة الحسابات -->
+        <div class="instagram-window">
+            <h2><i class="fab fa-instagram"></i> الحسابات الرسمية</h2>
+            <div class="account-card">
+                <i class="fab fa-instagram"></i>
+                <div>
+                    <h3>@ln6ie</h3>
+                    <p>حساب الهندسة</p>
+                </div>
+            </div>
+            <div class="account-card">
+                <i class="fab fa-instagram"></i>
+                <div>
+                    <h3>@elcomengineering</h3>
+                    <p>حساب الشركة</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- نافذة قياس السرعة -->
+        <div class="speedtest-window">
+            <h2><i class="fas fa-tachometer-alt"></i> قياس السرعة</h2>
+            <div class="speed-grid">
+                <div class="speed-item">
+                    <h3>4 ms</h3>
+                    <p>زمن الاستجابة</p>
+                </div>
+                <div class="speed-item">
+                    <h3>121 Mbps</h3>
+                    <p>سرعة التنزيل</p>
+                </div>
+            </div>
+            <div class="speed-graph"></div>
+            <button class="speed-btn">بدء الفحص الجديد</button>
+        </div>
+
+        <!-- نافذة التنزيل -->
+        <div class="download-window">
+            <h2><i class="fas fa-download"></i> تنزيل المحتوى</h2>
+            <div class="platform-selector">
+                <button class="platform-btn instagram"><i class="fab fa-instagram"></i></button>
+                <button class="platform-btn youtube"><i class="fab fa-youtube"></i></button>
+                <button class="platform-btn tiktok"><i class="fab fa-tiktok"></i></button>
+            </div>
+            <input type="text" class="download-input" placeholder="الصق الرابط هنا">
+            <button class="download-btn">تنزيل الآن</button>
+        </div>
+    </div>
+
+    <script>
+        // محاكاة فحص السرعة
+        document.querySelector('.speed-btn').addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-sync fa-spin"></i> جاري الفحص...';
+            setTimeout(() => {
+                this.innerHTML = 'تم الفحص بنجاح!';
+                // تحديث النتائج هنا
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
