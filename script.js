@@ -1,46 +1,15 @@
 // دالة لتنزيل المحتوى من إنستجرام
-async function downloadInstagram() {
+function downloadInstagram() {
     const url = document.getElementById('instagramUrl').value;
-    if (!url) {
-        alert('الرجاء إدخال رابط صحيح من إنستجرام.');
-        return;
-    }
-
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'YOUR_RAPIDAPI_KEY', // استبدل بمفتاح API الخاص بك
-            'X-RapidAPI-Host': 'instagram-downloader-download-instagram-videos-stories.p.rapidapi.com'
-        }
-    };
-
-    try {
-        const response = await fetch(`https://instagram-downloader-download-instagram-videos-stories.p.rapidapi.com/?url=${encodeURIComponent(url)}`, options);
-        const data = await response.json();
-
-        if (data.status === 'success') {
-            const downloadLink = data.data[0].url; // رابط التنزيل
-            window.open(downloadLink, '_blank'); // فتح الرابط في نافذة جديدة
-        } else {
-            alert('حدث خطأ أثناء محاولة تنزيل المحتوى.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('حدث خطأ أثناء الاتصال بالخادم.');
-    }
-}
-
-// دوال أخرى (يمكنك إضافة منطق التحميل لليوتيوب وفيسبوك وبينترست لاحقًا)
-function downloadYouTube() {
-    const url = document.getElementById('youtubeUrl').value;
     if (url) {
-        alert('جارٍ تحميل المحتوى من يوتيوب: ' + url);
+        alert('جارٍ تحميل المحتوى من إنستجرام: ' + url);
         // يمكنك إضافة منطق التحميل الفعلي هنا
     } else {
-        alert('الرجاء إدخال رابط صحيح من يوتيوب.');
+        alert('الرجاء إدخال رابط صحيح من إنستجرام.');
     }
 }
 
+// دالة لتنزيل المحتوى من فيسبوك
 function downloadFacebook() {
     const url = document.getElementById('facebookUrl').value;
     if (url) {
@@ -48,16 +17,6 @@ function downloadFacebook() {
         // يمكنك إضافة منطق التحميل الفعلي هنا
     } else {
         alert('الرجاء إدخال رابط صحيح من فيسبوك.');
-    }
-}
-
-function downloadPinterest() {
-    const url = document.getElementById('pinterestUrl').value;
-    if (url) {
-        alert('جارٍ تحميل المحتوى من بينترست: ' + url);
-        // يمكنك إضافة منطق التحميل الفعلي هنا
-    } else {
-        alert('الرجاء إدخال رابط صحيح من بينترست.');
     }
 }
 
