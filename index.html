@@ -11,51 +11,53 @@
 
 <header class="header">
     <h1>Elcom Downloader</h1>
-    <p>أفضل موقع لتحميل المحتوى من أشهر المنصات</p>
+    <p>مركز تحميل المحتوى من أشهر منصات التواصل الاجتماعي</p>
     <div class="toggle-container">
         <label>الوضع الليلي:</label>
         <input type="checkbox" id="darkModeToggle">
     </div>
 </header>
 
-<section class="platforms">
-    <h2>المنصات المدعومة</h2>
-    <div class="icons">
-        <img src="images/instagram.png" alt="Instagram">
-        <img src="images/youtube.png" alt="YouTube">
-        <img src="images/facebook.png" alt="Facebook">
-        <img src="images/twitter.png" alt="Twitter">
-        <img src="images/pinterest.png" alt="Pinterest">
-    </div>
-</section>
+<section class="platforms-section">
+    <h2>اختر المنصة</h2>
+    
+    <div class="platforms-grid">
+        <!-- بطاقة إنستجرام -->
+        <div class="platform-card instagram">
+            <img src="images/instagram.png" alt="Instagram">
+            <h3>إنستجرام</h3>
+            <p>تنزيل الصور، الفيديوهات، الريلز، والستوريات</p>
+            <button class="download-btn" data-platform="instagram">بدء التنزيل</button>
+        </div>
 
-<section class="download-section">
-    <h2>تحميل المحتوى</h2>
-    <div id="drop-area">
-        <p>اسحب وأسقط الملف هنا أو <span id="browse">اختر ملف</span></p>
-        <input type="file" id="file-input" hidden>
-    </div>
-    <div id="progress-bar">
-        <div id="progress"></div>
-    </div>
-    <button id="upload-btn">رفع الملف</button>
-</section>
+        <!-- بطاقة يوتيوب -->
+        <div class="platform-card youtube">
+            <img src="images/youtube.png" alt="YouTube">
+            <h3>يوتيوب</h3>
+            <p>تنزيل الفيديوهات بجودة عالية (1080p، 4K)</p>
+            <button class="download-btn" data-platform="youtube">بدء التنزيل</button>
+        </div>
 
-<section class="contact">
-    <h2>تواصل معنا</h2>
-    <form id="contact-form">
-        <input type="text" id="name" placeholder="اسمك" required>
-        <input type="email" id="email" placeholder="بريدك الإلكتروني" required>
-        <textarea id="message" placeholder="رسالتك" required></textarea>
-        <button type="submit">إرسال</button>
-    </form>
-    <p>تابعنا على:</p>
-    <a href="https://www.instagram.com/elcomengineering" target="_blank">@elcomengineering</a><br>
-    <a href="https://www.instagram.com/ln6ie" target="_blank">@ln6ie</a>
+        <!-- بطاقة تيك توك -->
+        <div class="platform-card tiktok">
+            <img src="images/tiktok.png" alt="TikTok">
+            <h3>تيك توك</h3>
+            <p>تنزيل الفيديوهات بدون علامة مائية</p>
+            <button class="download-btn" data-platform="tiktok">بدء التنزيل</button>
+        </div>
+
+        <!-- بطاقة تويتر -->
+        <div class="platform-card twitter">
+            <img src="images/twitter.png" alt="Twitter">
+            <h3>تويتر (X)</h3>
+            <p>تنزيل التغريدات مع المرفقات</p>
+            <button class="download-btn" data-platform="twitter">بدء التنزيل</button>
+        </div>
+    </div>
 </section>
 
 <footer class="footer">
-    <p>تم الإعداد بواسطة المهندس عبدالله كريم</p>
+    <p>تم التطوير بواسطة <span>المهندس عبدالله كريم</span></p>
 </footer>
 
 </body>
