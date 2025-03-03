@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #6e7dff, #3b4fb1);
+    background: #1a1a1a; /* خلفية غير شفافة */
     color: #fff;
     text-align: center;
     padding-bottom: 40px;
@@ -21,7 +21,7 @@ body.dark-mode {
 }
 
 header {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #333; /* خلفية غير شفافة */
     color: #fff;
     padding: 20px;
     position: fixed;
@@ -83,7 +83,7 @@ section.content {
 }
 
 .feature {
-    background: rgba(255, 255, 255, 0.1);
+    background: #333; /* خلفية غير شفافة */
     padding: 30px;
     border-radius: 10px;
     width: 30%;
@@ -93,7 +93,7 @@ section.content {
 
 .feature:hover {
     transform: translateY(-10px);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #444;
 }
 
 .feature i {
@@ -114,7 +114,7 @@ section.content {
 }
 
 .download-section {
-    background: rgba(255, 255, 255, 0.1);
+    background: #333; /* خلفية غير شفافة */
     padding: 30px;
     border-radius: 10px;
     margin-bottom: 50px;
@@ -134,7 +134,7 @@ section.content {
 }
 
 .options span {
-    background: rgba(255, 255, 255, 0.2);
+    background: #444; /* خلفية غير شفافة */
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -142,7 +142,7 @@ section.content {
 }
 
 .options span:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #555;
 }
 
 input {
@@ -151,14 +151,14 @@ input {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 15px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #444; /* خلفية غير شفافة */
     color: #fff;
     font-size: 1em;
     transition: background-color 0.3s ease;
 }
 
 input:focus {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #555;
 }
 
 button {
@@ -199,7 +199,7 @@ button:hover {
 
 /* الفوتر */
 footer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #333; /* خلفية غير شفافة */
     color: #fff;
     padding: 15px;
     margin-top: 30px;
@@ -212,21 +212,21 @@ footer p {
 
 /* تنسيقات الوضع المظلم */
 body.dark-mode input {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #444;
     border-color: #555;
     color: #ccc;
 }
 
 body.dark-mode input:focus {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #555;
 }
 
 body.dark-mode .feature {
-    background: rgba(255, 255, 255, 0.05);
+    background: #444;
 }
 
 body.dark-mode .feature:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #555;
 }
 
 body.dark-mode button {
