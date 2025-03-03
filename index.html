@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELCOM Downloader</title>
+    <title>Toolzu - Instagram Story Downloader</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,7 +11,7 @@
 
     <header>
         <div class="logo">
-            <h1>ELCOM Downloader</h1>
+            <h1>Toolzu</h1>
         </div>
         <div class="dark-mode-toggle">
             <button id="darkModeToggle"><i class="fas fa-moon"></i> تمكين الوضع المظلم</button>
@@ -20,35 +20,47 @@
 
     <section class="content">
         <div class="intro">
-            <h2>تحميل المحتوى من منصات مختلفة بسهولة</h2>
-            <p>ادخل الرابط وقم باختيار نوع المحتوى لتنزيله.</p>
+            <h2>Instagram Story Downloader</h2>
+            <p>Download Instagram Stories quickly, easily and only in good quality. Seemed impossible? Now it is real.</p>
         </div>
 
-        <div class="platforms">
-            <!-- إنستجرام -->
-            <div class="platform instagram">
-                <i class="fab fa-instagram fa-4x"></i>
-                <h3>إنستجرام</h3>
-                <input type="text" id="instagramUrl" placeholder="أدخل رابط الصورة أو الفيديو">
-                <button onclick="downloadInstagram()">تحميل</button>
-                <p class="example">مثال: @viki_odintcova</p>
-                <p class="disclaimer">هذا الموقع محمي بواسطة reCAPTCHA و<a href="https://policies.google.com/privacy" target="_blank">سياسة الخصوصية</a> و<a href="https://policies.google.com/terms" target="_blank">شروط الخدمة</a> من Google.</p>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-rocket"></i>
+                <h3>Fast</h3>
+                <p>High quality downloads in seconds.</p>
             </div>
+            <div class="feature">
+                <i class="fas fa-star"></i>
+                <h3>High Quality</h3>
+                <p>Download stories in the best quality available.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-gift"></i>
+                <h3>Free</h3>
+                <p>Completely free to use, no hidden fees.</p>
+            </div>
+        </div>
 
-            <!-- فيسبوك -->
-            <div class="platform facebook">
-                <i class="fab fa-facebook fa-4x"></i>
-                <h3>فيسبوك</h3>
-                <input type="text" id="facebookUrl" placeholder="أدخل رابط الصورة أو الفيديو">
-                <button onclick="downloadFacebook()">تحميل</button>
-                <p class="example">مثال: @viki_odintcova</p>
-                <p class="disclaimer">هذا الموقع محمي بواسطة reCAPTCHA و<a href="https://policies.google.com/privacy" target="_blank">سياسة الخصوصية</a> و<a href="https://policies.google.com/terms" target="_blank">شروط الخدمة</a> من Google.</p>
+        <div class="download-section">
+            <h3>Download Instagram Stories</h3>
+            <div class="options">
+                <span>Photo</span>
+                <span>Video</span>
+                <span>Profile</span>
+                <span>Stories</span>
+                <span>IGTV</span>
+                <span>DP</span>
             </div>
+            <input type="text" id="instagramUrl" placeholder="أدخل رابط إنستجرام">
+            <button onclick="downloadInstagram()">تحميل</button>
+            <p class="example">Example: @viki_odintcova</p>
+            <p class="disclaimer">This site is protected by reCAPTCHA and the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 ELCOM Downloader. جميع الحقوق محفوظة.</p>
+        <p>&copy; 2025 Toolzu. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script src="script.js"></script>
