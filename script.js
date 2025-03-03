@@ -1,12 +1,13 @@
-// دالة لتنزيل المحتوى من إنستجرام
-function downloadInstagram() {
-    const url = document.getElementById('instagramUrl').value;
-    if (url) {
-        alert('جارٍ تحميل المحتوى من إنستجرام: ' + url);
-        // يمكنك إضافة منطق التحميل الفعلي هنا
-    } else {
-        alert('الرجاء إدخال رابط صحيح من إنستجرام.');
+// دالة لتنزيل المحتوى
+function downloadContent() {
+    const url = document.getElementById('downloadUrl').value;
+    if (!url) {
+        alert('الرجاء إدخال رابط صحيح.');
+        return;
     }
+
+    // يمكنك إضافة منطق التحميل الفعلي هنا
+    alert('جارٍ تحميل المحتوى: ' + url);
 }
 
 // تفعيل الوضع المظلم
